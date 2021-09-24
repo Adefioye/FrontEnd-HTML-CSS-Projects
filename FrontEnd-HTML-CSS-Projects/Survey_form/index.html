@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body >
+    <h1 id="title">freeCodeCamp Survey Form</h1>
+    <p id="description">Thank you for taking the time to help us improve the platform</p>
+    <div class="center-form">
+        <form id="survey-form" action="">
+                <label for="name" class="space-above-btn">Name</label>
+                <input type="text" id="name" class="space-between btn-width" name="name" placeholder="Enter your name" required>
+
+                <label for="email" class="space-above-btn">Email</label>
+                <input type="email" id="email" class="space-between btn-width" name="email" placeholder="Enter your Email"required> 
+
+                <label for="number" class="space-above-btn">Age (optional)</label>
+                <input type="number" id="number" name="number" class="space-between btn-width" placeholder="Age" min="0" max="150">
+
+                <label for="drop-down" class="space-above-btn">Which option best describes your current role?</label>
+                <input list="drop-downs" id="drop-down" name="drop=down" class="space-between btn-width" placeholder="Select current role">
+                <datalist id="drop-downs">
+                    <option value="Student">
+                    <option value="Full Time Job">
+                    <option value="Full Time Learner">
+                    <option value="Prefer not to say">
+                    <option value="Other">
+                </datalist>
+
+                <fieldset class="space-between">
+                    <legend class="space-above-btn">Would you recommend freeCodeCamp to a friend?</legend>
+                    <input type="radio" name="recommendation" value="definitely"> Definitely <br>
+                    <input type="radio" name="recommendation" value="maybe"> Maybe <br>
+                    <input type="radio" name="recommendation" value="not sure"> Not Sure <br>
+                </fieldset>
+
+                <label for="drop-down" class="space-above-btn">What is your favorite feature of freeCodeCamp?</label>
+                <input list="drop-downs" id="drop-down" name="drop=down" class="space-between btn-width" placeholder="Select an option">
+                <datalist id="drop-downs">
+                    <option value="Challenges">
+                    <option value="Projects">
+                    <option value="Community">
+                    <option value="Open Source">
+                </datalist>
+
+                <fieldset class="space-between">
+                    <legend class="space-above-btn">Would you recommend freeCodeCamp to a friend?</legend>
+                    <input type="checkbox" name="need-improvement" value="Front-end Projects"> Front-end Projects <br>
+                    <input type="checkbox" name="need-improvement" value="Back-end Projects"> Back-end Projects <br>
+                    <input type="checkbox" name="need-improvement" value="Data Visualization"> Data Visualization <br>
+                    <input type="checkbox" name="need-improvement" value="Challenges"> Challenges <br>
+                    <input type="checkbox" name="need-improvement" value="Open Source Community"> Open Source Community <br>
+                    <input type="checkbox" name="need-improvement" value="Gitter help rooms"> Gitter help rooms <br>
+                    <input type="checkbox" name="need-improvement" value="Videos"> Videos <br>
+                    <input type="checkbox" name="need-improvement" value="City Meetups"> City Meetups <br>
+                    <input type="checkbox" name="need-improvement" value="Wiki"> Wiki <br>
+                    <input type="checkbox" name="need-improvement" value="Forum"> Forum <br>
+                    <input type="checkbox" name="need-improvement" value="Additional Courses"> Additional Courses <br>
+                </fieldset>
+
+                <label for="text-area" class="space-above-btn">Any comments or suggestions?</label>
+                <textarea class="space-between" name="comments" id="text-area" cols="30" rows="10" placeholder="Enter your comment here..." style="width: 100%;"></textarea>
+
+                <input type="submit" class="btn-width" style="color: #fff; background-color: green;">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+@media only screen and (max-device-width: 320px) {
+    .pricing-center {
+        width: 100%;
+    }
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+#header {
+    margin-top: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2em;
+}
+
+.header-center,
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.header-name {
+    font-family: Tahoma, Verdana, Geneva, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-link {
+    font-size: 1.2em;
+    margin-right: 1.5em;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-link:hover {
+    background-color: darkgray;
+}
+
+.heading-center {
+    text-align: center;
+}
+
+#email {
+    width: 25%;
+    height: 30px;
+}
+#submit {
+    display: block;
+    text-align: center;
+    width: 15%;
+    margin: 1.2em auto 5em auto;
+    font-weight: bold;
+    height: 30px;
+}
+
+.btn-color {
+    background-color: rgba(255, 255, 0, 1);
+}
+
+.btn-color:hover {
+    background-color: orange;
+}
+
+#feature-area {
+    margin: 0 20%;
+    width: 60%;
+}
+
+.image-row {
+    display: flex;
+    margin-bottom: 1.5em;
+}
+
+.feature-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 4em;
+}
+
+.feature-header {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.image-size {
+    width: 4em;
+    height: 3.5em;
+}
+
+
+.video-format {
+    margin: 1.5em 30%;
+    width: 40%;
+    height: 500px;
+}
+
+#pricing {
+    display: flex;
+    width: 70%;
+    margin: 0 15%;
+    justify-content: space-around;
+}
+
+.pricing-center {
+    text-align: center;
+    border: 1px solid black;
+    padding-bottom: 1.3em;
+}
+
+.pricing-header {
+    background-color: rgba(128, 128, 128, 0.5);
+    margin-top: 0;
+    padding: 1.2em 3em;
+    height: 1em;
+    text-align: center;
+}
+
+.pricing-price {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.btn-pricing {
+    width: 33%;
+    height: 30px;
+}
+
+footer {
+    width: 70%;
+    margin: 1.2em 15%;
+    background-color:rgba(128, 128, 128, 0.5);
+    margin-bottom: 0;
+    text-align: right;
+    padding: 1.2em 1.2em .5em 0;
+}
+
+footer div span {
+    margin-right: 1.5em;
+}
+

@@ -1,0 +1,95 @@
+
+
+header {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: end;
+}
+
+header a {
+    padding: 10px;
+}
+
+header img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+nav {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.app-icon {
+    color: grey;
+}
+
+body {
+    display: grid;
+}
+body img {
+    justify-self: center;
+}
+
+body input {
+    display: grid;
+    width: 30%;
+    justify-self: center;
+    margin-top: 1.5em;
+    padding: 15px;
+}
+
+
+.space-button {
+    margin: auto;
+    margin-top: 20px;
+}
+
+.button-style {
+    padding: 10px;
+}
+
+.button-space-right {
+    margin-right: 20px;
+}
+
+.stay-in-line {
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.style-links {
+    color: blue;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+.style-spans:hover {
+    text-decoration: underline;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    right: 0;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(232, 232, 232, 1);
+}
+
+.styling-footer {
+    text-decoration: none;
+    margin: 0 5px;
+    color: black;
+}
+
+.styling-footer:hover {
+    text-decoration: underline;
+}
