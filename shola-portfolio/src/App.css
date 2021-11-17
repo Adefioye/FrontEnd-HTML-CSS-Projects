@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mainColor: #15023a;
+}
+
+.app {
+  height: 100vh;
+}
+.app .sections {
+  width: 100%;
+  height: calc(100vh - 4rem);
+  position: relative;
+  top: 4rem;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none; /* for firefox */
+}
+.app .sections::-webkit-scrollbar {
+  display: none;
+}
+.app .sections > * {
+  width: 100vw;
+  height: calc(100vh - 4rem);
+  scroll-snap-align: start;
+}
