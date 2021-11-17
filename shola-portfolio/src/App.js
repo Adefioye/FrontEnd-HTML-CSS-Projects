@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // Import components
 import Navbar from "./components/Navbar/Navbar";
 import Intro from "./components/Intro/Intro";
@@ -9,9 +9,17 @@ import Contact from "./components/Contact/Contact";
 import "./App.css";
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const openMenu = menuOpen ? "active" : "";
+
   return (
     <div className="app">
-      <Navbar />
+      <Navbar
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+        openMenu={openMenu}
+      />
       <div className="sections">
         <Intro />
         <About />

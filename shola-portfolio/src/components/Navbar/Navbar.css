@@ -7,6 +7,7 @@
   position: fixed;
   top: 0;
   z-index: 2;
+  transition: all 2s ease;
 }
 
 .container {
@@ -44,6 +45,10 @@
   font-weight: 600;
 }
 
+/* .right {
+  position: relative;
+} */
+
 .right .hamburger {
   width: 2.5rem;
   height: 2rem;
@@ -51,10 +56,43 @@
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
+  /* position: absolute;
+  right: 2rem;
+  bottom: -0.7rem; */
 }
 
 .hamburger span {
   width: 100%;
   height: 0.3rem;
   background-color: var(--mainColor);
+  transform-origin: left;
+  transition: all 2s ease;
+}
+
+/* Upon clicking hamburger, we change hamburger to cross */
+
+.active {
+  background-color: var(--mainColor);
+  color: white;
+}
+
+.active .hamburger {
+  scrollbar-width: none; /* firefox*/
+}
+
+.active .hamburger::-webkit-scrollbar {
+  display: none;
+}
+.active .hamburger span:first-child {
+  background-color: white;
+  transform: rotate(45deg);
+}
+
+.active .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.active .hamburger span:last-child {
+  background-color: white;
+  transform: rotate(-45deg);
 }

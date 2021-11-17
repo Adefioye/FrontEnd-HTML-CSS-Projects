@@ -1,14 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Person, Email } from "@material-ui/icons";
 import "./Navbar.css";
 
-function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const openMenu = menuOpen ? "active" : "";
-
+function Navbar({ menuOpen, setMenuOpen, openMenu }) {
   return (
-    <div className="navbar" id="navbar">
+    <div className={`navbar ${openMenu}`} id="navbar">
       <div className="container">
         <div className="left">
           <a href="#intro" className="logo">
