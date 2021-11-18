@@ -6,6 +6,7 @@ import About from "./components/About/About";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Works from "./components/Works/Works";
 import Contact from "./components/Contact/Contact";
+import Menu from "./components/Menu/Menu";
 import "./App.css";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         setMenuOpen={setMenuOpen}
         openMenu={openMenu}
       />
+      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} openMenu={openMenu} />
       <div className="sections">
         <Intro />
         <About />
