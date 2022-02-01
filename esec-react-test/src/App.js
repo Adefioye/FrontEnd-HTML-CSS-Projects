@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { React, useState, useEffect } from "react";
+import "./App.css";
+import axios from "axios"
+import SideBar from "./components/SideBar";
+import VideoCards from "./components/VideoCards";
 
 function App() {
+  const [videoList, setVideoList] = useState([]);
+
+
+  useEffect(() => {
+    const fetchVideoData = async (term) => {
+      const response = await axios.get(
+        "https://adaorachi.github.io/esetech-assessment-api/game-data.json"
+      );
+      console.log(response.data.length);
+      setVideoList(response.data);
+    };
+    fetchVideoData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="row">
+        <SideBar videoList={videoList} />
+        <VideoCards videoList={videoList} />
+      </div>
     </div>
   );
 }
