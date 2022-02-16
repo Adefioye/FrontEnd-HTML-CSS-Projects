@@ -1,8 +1,17 @@
-import { React } from "react";
+import React,{ useContext , useState} from "react";
+import { GameContext } from "../../GameContext";
 
-function VideoCards({ videoList }) {
+
+
+function VideoCards() {
+
+  
+  const {videoList} = useContext(GameContext);
+  console.log(videoList);
+
+
   return (
-    <div className="col-sm-8">
+    <div data-testid='videocard' className="col-sm-8">
       <h1>Video Informations</h1>
       {videoList.map((video) => (
         <div key={video.id} className="card mb-3">
