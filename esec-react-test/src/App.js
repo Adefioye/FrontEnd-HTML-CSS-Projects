@@ -3,15 +3,15 @@ import "./App.css";
 import SideBar from "./components/SideBar";
 import VideoCards from "./components/videocards/VideoCards";
 import { GameContextProvider,GameContext } from "./GameContext";
-
+import { Provider } from 'react-redux';
+import store from "./store";
 
 function App() {
-  // const state = useContext(GameContext);
-  // console.log(state);
+  
 
 
   return (
-    <GameContextProvider >
+    <Provider  store= { store }>
       <div className="container">
         <div className="row">
           <SideBar />
@@ -19,7 +19,7 @@ function App() {
         </div>
       </div>
 
-    </GameContextProvider>
+    </Provider>
 
   );
 }

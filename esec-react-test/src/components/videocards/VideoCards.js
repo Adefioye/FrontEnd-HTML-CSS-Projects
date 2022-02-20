@@ -1,13 +1,15 @@
 import React,{ useContext , useState} from "react";
 import { GameContext } from "../../GameContext";
+import { useSelector } from 'react-redux'
 
 
 
 function VideoCards() {
 
   
-  const {videoList} = useContext(GameContext);
-  console.log(videoList);
+  const videoList = useSelector((state) => state.videos.video);
+  console.log(videoList)
+
 
 
   return (

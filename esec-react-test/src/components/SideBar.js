@@ -1,21 +1,27 @@
-import { React, useState, createContext, useContext, useRef, useEffect } from "react";
+import React,{  useState, createContext, useContext, useRef, useEffect } from "react";
 import { GameContext } from "../GameContext.js";
+import { useSelector,useDispatch } from 'react-redux'
+import { updateVideos } from  '../Slices/videoSlice'
 import axios from "axios"
 
 
 function SideBar() {
 
-  const {videoList,setVideoList,tempVideoList,setTempVideoList} = useContext(GameContext);
+  const videoList = useSelector((state) => state.videos.video);
+  // const tempVideoList = useSelector((state) => state.videos.video);
   const [filterValue, setFilterValue] = useState('');
+  const [tempVideoList, setTempVideoList] = useState([]);
   const searchText = useRef('');
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchVideoData = async (term) => {
       const response = await axios.get(
         "https://adaorachi.github.io/esetech-assessment-api/game-data.json"
       );
-      setVideoList([1,2,3]);
-      setVideoList(response.data);
+
+      dispatch(updateVideos(response.data));
+      // setVideoList(response.data);
       setTempVideoList(response.data);
       console.log(response.data);
     };
@@ -32,7 +38,7 @@ function sortByTitle(e) {
     game.name.includes(e.target.value)
   );
 
-  setVideoList(sortedVideoList);
+  dispatch(updateVideos(sortedVideoList));
   console.log(videoList);
 }
 function handleChange(e) {
@@ -45,26 +51,26 @@ function handleChange(e) {
     case 'Rating (Asc)':
       filterSortedVideoList = filterSortedVideoList.sort((a, b) => a.rating > b.rating ? 1 : -1)
       console.log(filterSortedVideoList);
-      setVideoList(filterSortedVideoList);
+      dispatch(updateVideos(filterSortedVideoList));
       break;
     case 'Rating (Desc)':
       filterSortedVideoList = filterSortedVideoList.sort((a, b) => a.rating > b.rating ? -1 : 1)
       console.log(filterSortedVideoList);
-      setVideoList(filterSortedVideoList);
+      dispatch(updateVideos(filterSortedVideoList));
       break;
     case 'Release Date (Asc)':
       filterSortedVideoList = filterSortedVideoList.sort((a, b) => a.first_release_date > b.first_release_date ? 1 : -1)
       console.log(filterSortedVideoList);
-      setVideoList(filterSortedVideoList);
+      dispatch(updateVideos(filterSortedVideoList));
       break;
     case 'Release Date (Desc)':
       filterSortedVideoList = filterSortedVideoList.sort((a, b) => a.first_release_date > b.first_release_date ? -1 : 1)
       console.log(filterSortedVideoList);
-      setVideoList(filterSortedVideoList);
+      dispatch(updateVideos(filterSortedVideoList));
       break;
     default:
       
-      setVideoList(filterSortedVideoList);
+      dispatch(updateVideos(filterSortedVideoList));
 
   }
 }
@@ -74,7 +80,7 @@ function clearFilter(e) {
   e.preventDefault();
   searchText.current.value="";
   setFilterValue("No Filter");
-  setVideoList(tempVideoList);
+  dispatch(updateVideos(tempVideoList));
 }
 
   
