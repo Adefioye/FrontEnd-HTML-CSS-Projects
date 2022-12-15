@@ -27,6 +27,13 @@ function SideBar() {
     };
     fetchVideoData();
   }, []);
+
+  const getVideos = async (term)=> {
+
+    const response = await axios.get( );
+
+    console.log(response);
+  }
  
 
 
